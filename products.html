@@ -3,7 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Products - Atvell Trading</title>
+<title>Products | Atvell Trading Sdn Bhd - Wholesale Souvenirs</title>
+
+<!-- SEO -->
+<meta name="description" content="View sample products from Atvell Trading Sdn Bhd, a trusted Malaysian wholesale supplier of cultural souvenirs, religious items and temple gifts.">
+<meta name="keywords" content="wholesale souvenirs, temple souvenirs, cultural products Malaysia, religious statues wholesale, souvenir supplier, Batu Caves gift shop">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Atvell Trading - Wholesale Souvenirs & Cultural Products">
+<meta property="og:description" content="Trusted supplier of souvenirs, religious items and cultural products since 1968.">
+<meta property="og:image" content="assets/images/atvelllogo.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -16,7 +27,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* FIXED HEADER */
+/* HEADER */
 header {
     width: 100%;
     height: 90px;
@@ -33,9 +44,10 @@ header {
     padding: 0 40px;
     box-shadow: 0 2px 20px rgba(0,0,0,0.05);
     z-index: 9999;
+    box-sizing: border-box;
 }
 
-/* CLICKABLE LOGO + NAME */
+/* LOGO */
 .logo-title a {
     display: flex;
     align-items: center;
@@ -50,17 +62,18 @@ header {
 .brand-title {
     font-size: 20px;
     font-weight: 600;
-    white-space: nowrap;
     color: #4a3d29;
+    white-space: nowrap;
 }
 
-/* FIXED TASKBAR (SHIFTED LEFT) */
+/* DESKTOP NAV */
 nav {
-    transform: translateX(-60px);
+    display: flex;
+    gap: 28px;
+    transform: translateX(-40px);
 }
 
 nav a {
-    margin-left: 25px;
     text-decoration: none;
     white-space: nowrap;
     color: #4a3d29;
@@ -71,17 +84,44 @@ nav a:hover {
     color: #c9a55a;
 }
 
-/* ENSURE LINKS NEVER TURN BLUE */
-a {
+/* MOBILE HAMBURGER */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 26px;
+    height: 3px;
+    background: #4a3d29;
+}
+
+/* MOBILE DROPDOWN MENU */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    border-bottom: 1px solid #e8dfd4;
+}
+
+.mobile-nav a {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0e8dc;
+    font-size: 18px;
+    font-weight: 500;
     color: #4a3d29;
     text-decoration: none;
 }
 
-a:hover {
+.mobile-nav a:hover {
     color: #c9a55a;
 }
 
-/* PRODUCT SECTION */
+/* CONTENT */
 .section {
     padding: 40px;
     max-width: 1100px;
@@ -140,12 +180,29 @@ h1 {
     width: 65px;
 }
 
-/* MOBILE FRIENDLY */
+/* RESPONSIVE */
 @media(max-width: 900px){
-    nav { transform: translateX(-10px); }
-    header { height: 80px; padding: 0 20px; }
-    .brand-title { font-size: 16px; }
-    h1 { font-size: 32px; }
+
+    nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    header {
+        height: 80px;
+        padding: 0 20px;
+    }
+
+    .brand-title {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
 }
 
 </style>
@@ -154,20 +211,36 @@ h1 {
 <body>
 
 <header>
+
+    <!-- LOGO -->
     <div class="logo-title">
         <a href="index.html">
-            <img src="assets/images/atvelllogo.png">
+            <img src="assets/images/atvelllogo.png" alt="Atvell Trading Logo">
             <span class="brand-title">Atvell Trading Sdn Bhd</span>
         </a>
     </div>
 
+    <!-- DESKTOP NAV -->
     <nav>
         <a href="index.html">HOME</a>
         <a href="about.html">ABOUT US</a>
         <a href="products.html" style="color:#c9a55a;">PRODUCTS</a>
         <a href="contact.html">CONTACT US</a>
     </nav>
+
+    <!-- MOBILE HAMBURGER -->
+    <div class="hamburger" onclick="toggleMobileMenu()">
+        <div></div><div></div><div></div>
+    </div>
 </header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-nav" id="mobileNav">
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT US</a>
+    <a href="products.html">PRODUCTS</a>
+    <a href="contact.html">CONTACT US</a>
+</div>
 
 <section class="section">
 
@@ -178,24 +251,35 @@ h1 {
 </div>
 
 <div class="grid">
-    <div class="card"><img src="assets/images/rubberstamp.jpg"></div>
-    <div class="card"><img src="assets/images/namecard.jpg"></div>
-    <div class="card"><img src="assets/images/idcard.jpg"></div>
 
-    <div class="card"><img src="assets/images/souvenir.jpg"></div>
-    <div class="card"><img src="assets/images/keychain.jpg"></div>
-    <div class="card"><img src="assets/images/lamination.jpg"></div>
+    <div class="card"><img src="assets/images/product1.jpg" alt="product1 sample"></div>
+    <div class="card"><img src="assets/images/product2.jpg" alt="product2 sample"></div>
+    <div class="card"><img src="assets/images/product3.jpg" alt="product3 sample"></div>
 
-    <div class="card"><img src="assets/images/binding.jpg"></div>
-    <div class="card"><img src="assets/images/photocopy.jpg"></div>
-    <div class="card"><img src="assets/images/banner.jpg"></div>
+    <div class="card"><img src="assets/images/product4.jpg" alt="product4 sample"></div>
+    <div class="card"><img src="assets/images/product5.jpg" alt="product5 sample"></div>
+    <div class="card"><img src="assets/images/product6.jpg" alt="product6 sample"></div>
+
+    <div class="card"><img src="assets/images/product7.jpg" alt="product7 sample"></div>
+    <div class="card"><img src="assets/images/product8.jpg" alt="product8 sample"></div>
+    <div class="card"><img src="assets/images/product9.jpg" alt="product9 sample"></div>
+
 </div>
 
 </section>
 
+<!-- WHATSAPP -->
 <a class="whatsapp-float" href="https://wa.me/01118889942" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Chat">
 </a>
+
+<!-- JS -->
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById("mobileNav");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+</script>
 
 </body>
 </html>
