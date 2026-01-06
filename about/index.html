@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us | Atvell Trading Sdn Bhd</title>
+
+<meta name="description" content="Atvell Trading Sdn Bhd has supplied wholesale souvenirs, cultural items, and religious statues since 1968.">
+<meta name="keywords" content="about Atvell Trading, wholesale souvenirs Malaysia, cultural items wholesale, temple products supplier, Batu Caves souvenir shop">
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="About Atvell Trading Sdn Bhd">
+<meta property="og:description" content="A trusted Malaysian wholesale supplier of cultural souvenirs and religious items since 1968.">
+<meta property="og:image" content="../assets/images/atvelllogo.png">
+<meta property="og:type" content="website">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* SAME STYLES AS INDEX.HTML */
+body {margin:0;padding-top:120px;background:#f7f4ef;font-family:'Poppins',sans-serif;line-height:1.7;}
+header {width:100%;height:90px;background:#fff;border-bottom:1px solid #e8dfd4;position:fixed;top:0;left:0;display:flex;justify-content:space-between;align-items:center;padding:0 40px;box-shadow:0 2px 20px rgba(0,0,0,0.05);z-index:9999;box-sizing:border-box;}
+.logo-title a {display:flex;align-items:center;gap:14px;text-decoration:none;}
+.logo-title img {height:55px;}
+.brand-title {font-size:20px;font-weight:600;white-space:nowrap;color:#4a3d29;}
+nav {display:flex;gap:28px;transform:translateX(-40px);}
+nav a {text-decoration:none;color:#4a3d29;font-weight:500;white-space:nowrap;}
+nav a:hover {color:#c9a55a;}
+.hamburger {display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.hamburger div {width:26px;height:3px;background:#4a3d29;}
+.mobile-nav {display:none;flex-direction:column;background:white;width:100%;padding:20px;border-bottom:1px solid #e8dfd4;}
+.mobile-nav a {padding:12px 0;font-size:18px;font-weight:500;color:#4a3d29;text-decoration:none;border-bottom:1px solid #f0e8dc;}
+.mobile-nav a:hover {color:#c9a55a;}
+.section {padding:40px;max-width:1100px;margin:auto;}
+h1 {font-size:45px;margin-bottom:20px;color:#4a3d29;}
+p {font-size:18px;color:#5a5040;}
+.whatsapp-float {position:fixed;right:24px;bottom:24px;z-index:99999;}
+.whatsapp-float img {width:65px;}
+@media(max-width:900px){nav{display:none;}.hamburger{display:flex;}header{height:80px;padding:0 20px;}.brand-title{font-size:16px;}h1{font-size:32px;}p{font-size:16px;}}
+</style>
+</head>
+
+<body>
+<header>
+    <div class="logo-title">
+        <a href="/">
+            <img src="../assets/images/atvelllogo.png" alt="Atvell Trading Logo">
+            <span class="brand-title">Atvell Trading Sdn Bhd</span>
+        </a>
+    </div>
+    <nav>
+        <a href="/">HOME</a>
+        <a href="/about/" style="color:#c9a55a;">ABOUT US</a>
+        <a href="/products/">PRODUCTS</a>
+        <a href="/contact/">CONTACT US</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMobileMenu()"><div></div><div></div><div></div></div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+    <a href="/">HOME</a>
+    <a href="/about/">ABOUT US</a>
+    <a href="/products/">PRODUCTS</a>
+    <a href="/contact/">CONTACT US</a>
+</div>
+
+<section class="section">
+<h1>About Atvell Trading</h1>
+<p>Established in 1968, Atvell Trading Sdn Bhd has grown into a recognised name in souvenirs, cultural items and god statues, serving both retail and wholesale customers with reliability and quality for over five decades.</p>
+<p>We specialise in souvenirs for temples, events, and gift shops, offering god statues, religious artefacts, cultural decor pieces, festival gifts and customised souvenirs designed to suit a variety of needs and occasions.</p>
+<p>Backed by years of experience, we focus on delivering quality products at fair prices, ensuring dependable supply for bulk orders as well as individual purchases. Atvell Trading stands for quality, trust and heritage since 1968.</p>
+</section>
+
+<a class="whatsapp-float" href="https://wa.me/601118889942" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Chat">
+</a>
+
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById("mobileNav");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+</script>
+
+</body>
+</html>

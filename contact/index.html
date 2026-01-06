@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us | Atvell Trading Sdn Bhd</title>
+
+<meta name="description" content="Contact Atvell Trading Sdn Bhd, a trusted wholesale supplier of souvenirs, cultural products and temple items based in Batu Caves, Malaysia.">
+<meta name="keywords" content="contact Atvell Trading, Batu Caves souvenir shop, wholesale cultural items, temple souvenirs Malaysia, god statues supplier">
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="Contact Atvell Trading Sdn Bhd">
+<meta property="og:description" content="Reach out to us for wholesale cultural items, temple souvenirs and religious products.">
+<meta property="og:image" content="../assets/images/atvelllogo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {margin:0;padding-top:120px;background:#f7f4ef;font-family:'Poppins',sans-serif;}
+header {width:100%;height:90px;background:white;border-bottom:1px solid #e8dfd4;position:fixed;top:0;left:0;display:flex;justify-content:space-between;align-items:center;padding:0 40px;box-shadow:0 2px 20px rgba(0,0,0,0.05);z-index:9999;box-sizing:border-box;}
+.logo-title a {display:flex;align-items:center;gap:14px;text-decoration:none;}
+.logo-title img {height:55px;}
+.brand-title {font-size:20px;font-weight:600;white-space:nowrap;color:#4a3d29;}
+nav {display:flex;gap:28px;transform:translateX(-40px);}
+nav a {color:#4a3d29;text-decoration:none;white-space:nowrap;font-weight:500;}
+nav a:hover {color:#c9a55a;}
+.hamburger {display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.hamburger div {width:26px;height:3px;background:#4a3d29;}
+.mobile-nav {display:none;flex-direction:column;background:white;width:100%;padding:20px;border-bottom:1px solid #e8dfd4;}
+.mobile-nav a {padding:12px 0;font-size:18px;color:#4a3d29;font-weight:500;border-bottom:1px solid #f0e8dc;text-decoration:none;}
+.mobile-nav a:hover {color:#c9a55a;}
+.section {padding:40px;max-width:900px;margin:auto;}
+h1 {font-size:45px;margin-bottom:20px;color:#4a3d29;}
+p {font-size:18px;color:#5a5040;}
+a {color:#4a3d29;text-decoration:none;font-weight:600;}
+a:hover {color:#c9a55a;}
+.map {width:100%;height:350px;border-radius:12px;overflow:hidden;margin-top:20px;box-shadow:0 8px 20px rgba(0,0,0,0.1);}
+.whatsapp-float {position:fixed;right:24px;bottom:24px;z-index:99999;}
+.whatsapp-float img {width:65px;}
+@media(max-width:900px){nav{display:none;}.hamburger{display:flex;}header{height:80px;padding:0 20px;}.brand-title{font-size:16px;}h1{font-size:32px;}p{font-size:16px;}}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo-title">
+        <a href="/">
+            <img src="../assets/images/atvelllogo.png" alt="Atvell Trading Logo">
+            <span class="brand-title">Atvell Trading Sdn Bhd</span>
+        </a>
+    </div>
+
+    <nav>
+        <a href="/">HOME</a>
+        <a href="/about/">ABOUT US</a>
+        <a href="/products/">PRODUCTS</a>
+        <a href="/contact/" style="color:#c9a55a;">CONTACT US</a>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMobileMenu()"><div></div><div></div><div></div></div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+    <a href="/">HOME</a>
+    <a href="/about/">ABOUT US</a>
+    <a href="/products/">PRODUCTS</a>
+    <a href="/contact/">CONTACT US</a>
+</div>
+
+<section class="section">
+<h1>Contact Us</h1>
+
+<p>
+<strong>Address:</strong><br>
+<a href="https://maps.google.com/?q=No.+42,+Jalan+Medan+Batu+Caves+1,+68100+Batu+Caves,+Selangor" target="_blank">
+No. 42, Jalan Medan Batu Caves 1, 68100 Batu Caves, Selangor
+</a>
+<br><br>
+<strong>Phone:</strong><br>
+<a href="tel:01118889942">01118889942</a><br>
+<a href="tel:0103674459">0103674459</a>
+<br><br>
+<strong>Email:</strong><br>
+<a href="mailto:atvell.net@gmail.com">atvell.net@gmail.com</a>
+</p>
+
+<div class="map">
+    <iframe 
+        src="https://maps.google.com/maps?q=No.%2042,%20Jalan%20Medan%20Batu%20Caves%201,%2068100%20Batu%20Caves,%20Selangor&output=embed"
+        width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+        alt="Map showing Atvell Trading location in Batu Caves">
+    </iframe>
+</div>
+</section>
+
+<a class="whatsapp-float" href="https://wa.me/601118889942" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Chat">
+</a>
+
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById("mobileNav");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+</script>
+
+</body>
+</html>

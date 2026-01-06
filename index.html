@@ -34,14 +34,11 @@ header {
     height: 90px;
     background: #ffffff;
     border-bottom: 1px solid #e8dfd4;
-
     position: fixed;
     top: 0; left: 0;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 0 40px;
     box-shadow: 0 2px 20px rgba(0,0,0,0.05);
     z-index: 9999;
@@ -124,29 +121,35 @@ nav a:hover {
 /* SLIDESHOW */
 .slideshow-container {
     width: 100%;
-    height: 460px;
+    height: 580px; /* taller slideshow */
     overflow: hidden;
     border-radius: 20px;
     position: relative;
+    background: #f7f4ef;
 }
 
 .slide {
     position: absolute;
     width: 100%;
-    height: 460px;
+    height: 100%;
     opacity: 0;
     transition: opacity 1s ease;
 }
 
-.slide.active { opacity: 1; }
+.slide.active {
+    opacity: 1;
+}
 
 .slide img {
     width: 100%;
-    height: 460px;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain; /* fit entire image */
+    display: block;
+    margin: 0 auto;
+    background: #f7f4ef;
 }
 
-/* TEXT */
+/* HERO TEXT */
 .hero-content {
     padding: 40px;
     max-width: 900px;
@@ -192,44 +195,20 @@ nav a:hover {
 
 /* RESPONSIVE */
 @media(max-width: 900px){
-
-    nav {
-        display: none; /* hide desktop menu */
-    }
-
-    .hamburger {
-        display: flex; /* show mobile icon */
-    }
-
-    header {
-        padding: 0 20px;
-        height: 80px;
-    }
-
-    .slideshow-container {
-        height: 280px;
-    }
-
-    .slide img {
-        height: 280px;
-    }
-
-    .hero-content h1 {
-        font-size: 32px;
-    }
-
-    .hero-content p {
-        font-size: 16px;
-    }
+    nav { display: none; }
+    .hamburger { display: flex; }
+    header { padding: 0 20px; height: 80px; }
+    .slideshow-container { height: 380px; }
+    .slide img { height: 380px; }
+    .hero-content h1 { font-size: 32px; }
+    .hero-content p { font-size: 16px; }
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-
     <!-- LOGO + NAME -->
     <div class="logo-title">
         <a href="index.html">
@@ -241,9 +220,9 @@ nav a:hover {
     <!-- DESKTOP NAV -->
     <nav>
         <a href="index.html" style="color:#c9a55a;">HOME</a>
-        <a href="about.html">ABOUT US</a>
-        <a href="products.html">PRODUCTS</a>
-        <a href="contact.html">CONTACT US</a>
+        <a href="about/">ABOUT US</a>
+        <a href="products/">PRODUCTS</a>
+        <a href="contact/">CONTACT US</a>
     </nav>
 
     <!-- MOBILE HAMBURGER -->
@@ -257,23 +236,23 @@ nav a:hover {
 <!-- MOBILE DROPDOWN NAV -->
 <div class="mobile-nav" id="mobileNav">
     <a href="index.html">HOME</a>
-    <a href="about.html">ABOUT US</a>
-    <a href="products.html">PRODUCTS</a>
-    <a href="contact.html">CONTACT US</a>
+    <a href="about/">ABOUT US</a>
+    <a href="products/">PRODUCTS</a>
+    <a href="contact/">CONTACT US</a>
 </div>
 
 <!-- SLIDESHOW -->
 <div class="slideshow-container">
-    <div class="slide active"><img src="assets/images/atvelllogo.png" alt="product1"></div>
-    <div class="slide"><img src="assets/images/atvelllogo.png" alt="product2"></div>
-    <div class="slide"><img src="assets/images/atvelllogo.png" alt="product3"></div>
+    <div class="slide active"><img src="assets/images/slide1.png" alt="Slide 1"></div>
+    <div class="slide"><img src="assets/images/slide2.png" alt="Slide 2"></div>
+    <div class="slide"><img src="assets/images/slide3.png" alt="Slide 3"></div>
 </div>
 
 <!-- HERO TEXT -->
 <section class="hero-content">
     <h1>Welcome to Atvell Trading</h1>
     <p>Supplying trusted wholesale cultural items and souvenirs since 1968.</p>
-    <a class="btn" href="products.html">View Our Products</a>
+    <a class="btn" href="products/">View Our Products</a>
 </section>
 
 <!-- WHATSAPP -->
@@ -288,6 +267,7 @@ function toggleMobileMenu() {
     menu.style.display = menu.style.display === "flex" ? "none" : "flex";
 }
 
+// Slideshow
 let slides = document.querySelectorAll(".slide");
 let index = 0;
 
