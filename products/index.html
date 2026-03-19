@@ -38,10 +38,86 @@ h1 {font-size:45px;margin-bottom:20px;color:#4a3d29;}
 .grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;}
 .card {background:white;border-radius:14px;padding:10px;box-shadow:0 10px 28px rgba(0,0,0,0.08);transition:0.3s;}
 .card:hover {transform:translateY(-8px);box-shadow:0 14px 32px rgba(0,0,0,0.12);}
-.card img {width:100%;height:190px;object-fit:cover;border-radius:12px;}
+.card img {width:100%;height:190px;object-fit:cover;border-radius:12px;cursor:pointer;}
 .whatsapp-float {position:fixed;right:24px;bottom:24px;z-index:99999;}
 .whatsapp-float img {width:65px;}
 @media(max-width:900px){nav{display:none;}.hamburger{display:flex;}header{height:80px;padding:0 20px;}.brand-title{font-size:16px;}h1{font-size:32px;}}
+
+/* LIGHTBOX */
+.lightbox-backdrop{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9998;
+
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 200ms ease-out;
+}
+.lightbox-backdrop.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.lightbox-inner{
+  position:relative;
+  max-width:90vw;
+  max-height:90vh;
+  transform:scale(0.9) translateY(10px);
+  opacity:0;
+  transition:transform 220ms ease-out, opacity 220ms ease-out;
+}
+.lightbox-backdrop.active .lightbox-inner{
+  transform:scale(1) translateY(0);
+  opacity:1;
+}
+
+.lightbox-image{
+  display:block;
+  max-width:100%;
+  max-height:100%;
+  border-radius:14px;
+  box-shadow:0 18px 40px rgba(0,0,0,0.55);
+  object-fit:contain; /* show full image */
+  background:#111;
+}
+
+.lightbox-arrow{
+  position:fixed;
+  top:50%;
+  transform:translateY(-50%);
+  color:#ffffff;
+  font-size:30px;
+  background:rgba(0,0,0,0.5);
+  width:42px;
+  height:42px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  user-select:none;
+  transition:background 150ms ease-out, transform 150ms ease-out;
+}
+.lightbox-arrow-left{left:24px;}
+.lightbox-arrow-right{right:24px;}
+.lightbox-arrow:hover{
+  background:rgba(0,0,0,0.8);
+  transform:translateY(-50%) scale(1.06);
+}
+
+.lightbox-close-hint{
+  position:fixed;
+  bottom:22px;
+  left:50%;
+  transform:translateX(-50%);
+  color:#e5e7eb;
+  font-size:12px;
+  opacity:0.9;
+}
 </style>
 </head>
 
@@ -115,11 +191,98 @@ h1 {font-size:45px;margin-bottom:20px;color:#4a3d29;}
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Chat">
 </a>
 
+<!-- LIGHTBOX MARKUP -->
+<div class="lightbox-backdrop" id="lightboxBackdrop">
+  <div class="lightbox-inner">
+    <img id="lightboxImage" class="lightbox-image" src="" alt="">
+  </div>
+  <div class="lightbox-arrow lightbox-arrow-left" id="lightboxPrev">&#10094;</div>
+  <div class="lightbox-arrow lightbox-arrow-right" id="lightboxNext">&#10095;</div>
+  <div class="lightbox-close-hint">Click outside or press Esc to close</div>
+</div>
+
 <script>
 function toggleMobileMenu() {
     const menu = document.getElementById("mobileNav");
     menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
 }
+
+/* LIGHTBOX SCRIPT */
+(function(){
+  const images = Array.from(document.querySelectorAll('.grid .card img'));
+  const backdrop = document.getElementById('lightboxBackdrop');
+  const lightboxImg = document.getElementById('lightboxImage');
+  const prevBtn = document.getElementById('lightboxPrev');
+  const nextBtn = document.getElementById('lightboxNext');
+
+  let currentIndex = -1;
+
+  function setImage(index){
+    if(index < 0 || index >= images.length) return;
+    const img = images[index];
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt || "";
+  }
+
+  function openLightbox(index){
+    if(index < 0 || index >= images.length) return;
+    currentIndex = index;
+    setImage(currentIndex);
+    backdrop.classList.add('active');
+  }
+
+  function closeLightbox(){
+    backdrop.classList.remove('active');
+    currentIndex = -1;
+    setTimeout(() => {
+      if(!backdrop.classList.contains('active')) {
+        lightboxImg.src = "";
+      }
+    }, 220);
+  }
+
+  function showNext(){
+    if(currentIndex === -1) return;
+    const nextIndex = (currentIndex + 1) % images.length;
+    setImage(nextIndex);
+    currentIndex = nextIndex;
+  }
+
+  function showPrev(){
+    if(currentIndex === -1) return;
+    const prevIndex = (currentIndex - 1 + images.length) % images.length;
+    setImage(prevIndex);
+    currentIndex = prevIndex;
+  }
+
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+  });
+
+  nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showNext();
+  });
+
+  prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showPrev();
+  });
+
+  // close when clicking outside the image
+  backdrop.addEventListener('click', (e) => {
+    if(e.target === backdrop){
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if(!backdrop.classList.contains('active')) return;
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowRight') showNext();
+    if(e.key === 'ArrowLeft') showPrev();
+  });
+})();
 </script>
 
 </body>
