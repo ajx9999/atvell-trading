@@ -1,5 +1,24 @@
 # Changelog
 
+## Root Promotion And Documentation Update
+
+### Site Structure
+- Promoted the `V2` website structure to the repository root for cleaner static hosting.
+- Kept the numismatic section as a root subfolder at `numismatic/`.
+- Ensured the published site no longer depends on a version-prefixed URL path.
+
+### Numismatic Updates
+- Synced the latest numismatic page refinements after the first V2 push.
+- Added favicon and tab icon support to the numismatic pages.
+- Added a dedicated phone number entry to the numismatic contact page.
+- Updated the products page to show 9 product images in the gallery.
+- Kept click-to-open image viewing and left/right gallery navigation.
+
+### Documentation
+- Added a professional root `README.md`.
+- Expanded `.gitignore` to exclude editor files and Python cache files.
+- Retained the existing changelog history and added this follow-up entry.
+
 ## V2 Numismatic Site Update
 
 ### Pages Added
