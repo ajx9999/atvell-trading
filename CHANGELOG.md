@@ -1,23 +1,33 @@
 # Changelog
 
-## Root Promotion And Documentation Update
+## V2 Site Consolidation And Quality Update
 
-### Site Structure
-- Promoted the `V2` website structure to the repository root for cleaner static hosting.
-- Kept the numismatic section as a root subfolder at `numismatic/`.
-- Ensured the published site no longer depends on a version-prefixed URL path.
+### Main Site Updates
+- Added the main website pages under `V2/`:
+- `V2/index.html`
+- `V2/about/index.html`
+- `V2/products/index.html`
+- `V2/contact/index.html`
+- Added structured data to the main `V2` homepage, products, and contact pages.
+- Improved the products page note to sound more professional for retail and wholesale customers.
+
+### Product Gallery Updates
+- Updated the main `V2/products/index.html` image viewer to fully cover the page.
+- Kept image viewer closing behavior via outside click, `Esc`, and close button.
+- Removed the visible close hint text from the main products page.
 
 ### Numismatic Updates
-- Synced the latest numismatic page refinements after the first V2 push.
-- Added favicon and tab icon support to the numismatic pages.
-- Added a dedicated phone number entry to the numismatic contact page.
-- Updated the products page to show 9 product images in the gallery.
-- Kept click-to-open image viewing and left/right gallery navigation.
+- Updated `V2/numismatic/index.html`, `V2/numismatic/products.html`, and `V2/numismatic/contact/index.html`.
+- Pointed the numismatic home page `Contact Us` button to the actual contact page.
+- Removed the extra SEO-heavy visible text block from the numismatic contact page.
+- Improved metadata, canonical links, and schema on the numismatic pages.
+- Improved inline link styling and image alt text on the numismatic pages.
 
-### Documentation
-- Added a professional root `README.md`.
-- Expanded `.gitignore` to exclude editor files and Python cache files.
-- Retained the existing changelog history and added this follow-up entry.
+### Mobile And Compatibility
+- Improved mobile navigation behavior on the main `V2` Atvell pages.
+- Tightened mobile spacing, header sizing, and floating WhatsApp button behavior across the site.
+- Added `rel="noopener"` to external links that open in new tabs.
+- Corrected the main homepage WhatsApp link format.
 
 ## V2 Numismatic Site Update
 

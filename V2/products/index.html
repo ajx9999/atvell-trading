@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Products | Atvell Trading Sdn Bhd - Wholesale Souvenirs</title>
+
+<meta name="description" content="View sample products from Atvell Trading Sdn Bhd, a trusted Malaysian wholesale supplier of cultural souvenirs, religious items and temple gifts.">
+<meta name="keywords" content="wholesale souvenirs, temple souvenirs, cultural products Malaysia, religious statues wholesale, souvenir supplier, Batu Caves gift shop">
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="Atvell Trading - Wholesale Souvenirs & Cultural Products">
+<meta property="og:description" content="Trusted supplier of souvenirs, religious items and cultural products since 1968.">
+<meta property="og:image" content="../assets/images/atvelllogo.png">
+
+<link rel="icon" type="image/png" href="../assets/images/atvelllogo.png">
+<link rel="apple-touch-icon" href="../assets/images/atvelllogo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Atvell Trading Products",
+  "url": "https://atvell.com/products/",
+  "description": "Sample product gallery featuring wholesale souvenirs, cultural products, religious items, and temple gifts from Atvell Trading Sdn Bhd.",
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Atvell Trading sample product gallery",
+    "numberOfItems": 24
+  }
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {margin:0;padding-top:120px;background:#f7f4ef;font-family:'Poppins',sans-serif;}
+header {width:100%;height:90px;background:white;border-bottom:1px solid #e8dfd4;position:fixed;top:0;left:0;display:flex;justify-content:space-between;align-items:center;padding:0 40px;box-shadow:0 2px 20px rgba(0,0,0,0.05);z-index:9999;box-sizing:border-box;}
+.logo-title a {display:flex;align-items:center;gap:14px;text-decoration:none;}
+.logo-title img {height:55px;}
+.brand-title {font-size:20px;font-weight:600;color:#4a3d29;white-space:nowrap;}
+nav {display:flex;gap:28px;transform:translateX(-40px);}
+nav a {text-decoration:none;white-space:nowrap;color:#4a3d29;font-weight:500;}
+nav a:hover {color:#c9a55a;}
+.hamburger {display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.hamburger div {width:26px;height:3px;background:#4a3d29;}
+.mobile-nav {display:none;flex-direction:column;width:100%;background:white;padding:20px;border-bottom:1px solid #e8dfd4;box-sizing:border-box;position:fixed;top:90px;left:0;z-index:9998;}
+.mobile-nav a {padding:12px 0;border-bottom:1px solid #f0e8dc;font-size:18px;font-weight:500;color:#4a3d29;text-decoration:none;}
+.mobile-nav a:hover {color:#c9a55a;}
+.section {padding:40px;max-width:1100px;margin:auto;}
+h1 {font-size:45px;margin-bottom:20px;color:#4a3d29;}
+.note {text-align:center;font-size:18px;color:#5a5040;margin-bottom:25px;}
+.grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;}
+.card {background:white;border-radius:14px;padding:10px;box-shadow:0 10px 28px rgba(0,0,0,0.08);transition:0.3s;}
+.card:hover {transform:translateY(-8px);box-shadow:0 14px 32px rgba(0,0,0,0.12);}
+.card img {width:100%;height:190px;object-fit:cover;border-radius:12px;cursor:pointer;}
+.whatsapp-float {position:fixed;right:24px;bottom:24px;z-index:99999;}
+.whatsapp-float img {width:65px;}
+@media(max-width:900px){body{padding-top:100px;}nav{display:none;}.hamburger{display:flex;}header{height:80px;padding:0 20px;}.mobile-nav{top:80px;}.logo-title img{height:42px;}.brand-title{font-size:16px;}h1{font-size:32px;}}
+
+/* LIGHTBOX */
+.lightbox-backdrop{
+  position:fixed;
+  inset:0;
+  background:rgba(24,18,12,0.92);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px 88px;
+  box-sizing:border-box;
+  z-index:100000;
+
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 200ms ease-out;
+}
+.lightbox-backdrop.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.lightbox-inner{
+  position:relative;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transform:scale(0.9) translateY(10px);
+  opacity:0;
+  transition:transform 220ms ease-out, opacity 220ms ease-out;
+}
+.lightbox-backdrop.active .lightbox-inner{
+  transform:scale(1) translateY(0);
+  opacity:1;
+}
+
+.lightbox-image{
+  display:block;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  border-radius:10px;
+  box-shadow:0 18px 48px rgba(0,0,0,0.35);
+}
+
+.lightbox-arrow{
+  position:fixed;
+  top:50%;
+  transform:translateY(-50%);
+  color:#ffffff;
+  font-size:30px;
+  background:rgba(0,0,0,0.5);
+  width:42px;
+  height:42px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  user-select:none;
+  transition:background 150ms ease-out, transform 150ms ease-out;
+}
+.lightbox-arrow-left{left:24px;}
+.lightbox-arrow-right{right:24px;}
+.lightbox-arrow:hover{
+  background:rgba(0,0,0,0.8);
+  transform:translateY(-50%) scale(1.06);
+}
+
+.lightbox-close{
+  position:absolute;
+  top:20px;
+  right:20px;
+  color:#ffffff;
+  font-size:28px;
+  background:rgba(255,255,255,0.14);
+  width:48px;
+  height:48px;
+  border:0;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.lightbox-close:hover{
+  background:rgba(255,255,255,0.24);
+}
+
+@media(max-width:640px){
+  body{padding-top:96px;}
+  header{padding:0 14px;}
+  .logo-title a{gap:10px;}
+  .logo-title img{height:36px;}
+  .brand-title{font-size:15px;}
+  .mobile-nav{top:80px;padding:16px 14px;}
+  .mobile-nav a{font-size:16px;}
+  .section{padding:24px 14px 40px;}
+  .note{font-size:15px;margin-bottom:18px;}
+  .grid{gap:16px;}
+  .lightbox-backdrop{
+    padding:20px 10px;
+  }
+  .lightbox-image{
+    max-width:calc(100vw - 24px);
+    max-height:calc(100vh - 120px);
+  }
+  .lightbox-close,
+  .lightbox-arrow{
+    width:42px;
+    height:42px;
+    font-size:24px;
+  }
+  .lightbox-arrow-left{left:10px;}
+  .lightbox-arrow-right{right:10px;}
+  .lightbox-close{
+    top:10px;
+    right:10px;
+  }
+  .whatsapp-float{right:16px;bottom:16px;}
+  .whatsapp-float img{width:54px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo-title">
+        <a href="/">
+            <img src="../assets/images/atvelllogo.png" alt="Atvell Trading Logo">
+            <span class="brand-title">Atvell Trading Sdn Bhd</span>
+        </a>
+    </div>
+
+    <nav>
+        <a href="/">HOME</a>
+        <a href="/about/">ABOUT US</a>
+        <a href="/products/" style="color:#c9a55a;">PRODUCTS</a>
+        <a href="/contact/">CONTACT US</a>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMobileMenu()"><div></div><div></div><div></div></div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+    <a href="/">HOME</a>
+    <a href="/about/">ABOUT US</a>
+    <a href="/products/">PRODUCTS</a>
+    <a href="/contact/">CONTACT US</a>
+</div>
+
+<section class="section">
+<h1>Our Products</h1>
+<div class="note">The products displayed here are sample selections from our range. For more information on additional items and retail or wholesale orders, please contact us.</div>
+
+<div class="grid">
+    <div class="card"><img src="../assets/images/product1.webp" alt="product1 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+    <div class="card"><img src="../assets/images/product2.webp" alt="product2 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+    <div class="card"><img src="../assets/images/product3.webp" alt="product3 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+
+    <div class="card"><img src="../assets/images/product4.webp" alt="product4 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+    <div class="card"><img src="../assets/images/product5.webp" alt="product5 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+    <div class="card"><img src="../assets/images/product6.webp" alt="product6 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+
+    <div class="card"><img src="../assets/images/product7.webp" alt="product7 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+    <div class="card"><img src="../assets/images/product8.webp" alt="product8 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+    <div class="card"><img src="../assets/images/product9.webp" alt="product9 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+
+    <div class="card"><img src="../assets/images/product10.webp" alt="product10 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+    <div class="card"><img src="../assets/images/product11.webp" alt="product11 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+    <div class="card"><img src="../assets/images/product12.webp" alt="product12 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+
+    <div class="card"><img src="../assets/images/product13.webp" alt="product13 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+    <div class="card"><img src="../assets/images/product14.webp" alt="product14 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+    <div class="card"><img src="../assets/images/product15.webp" alt="product15 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+
+    <div class="card"><img src="../assets/images/product16.webp" alt="product16 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+    <div class="card"><img src="../assets/images/product17.webp" alt="product17 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+    <div class="card"><img src="../assets/images/product18.webp" alt="product18 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+
+    <div class="card"><img src="../assets/images/product19.webp" alt="product19 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+    <div class="card"><img src="../assets/images/product20.webp" alt="product20 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+    <div class="card"><img src="../assets/images/product21.webp" alt="product21 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+
+    <div class="card"><img src="../assets/images/product22.webp" alt="product22 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+    <div class="card"><img src="../assets/images/product23.webp" alt="product23 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+    <div class="card"><img src="../assets/images/product24.webp" alt="product24 sample" loading="lazy" decoding="async" width="400" height="190"></div>
+</div>
+</section>
+
+<a class="whatsapp-float" href="https://wa.me/601118889942" target="_blank" rel="noopener">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Chat">
+</a>
+
+<!-- LIGHTBOX MARKUP -->
+<div class="lightbox-backdrop" id="lightboxBackdrop">
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image viewer">&times;</button>
+  <div class="lightbox-inner">
+    <img id="lightboxImage" class="lightbox-image" src="" alt="">
+  </div>
+  <div class="lightbox-arrow lightbox-arrow-left" id="lightboxPrev">&#10094;</div>
+  <div class="lightbox-arrow lightbox-arrow-right" id="lightboxNext">&#10095;</div>
+</div>
+
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById("mobileNav");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+
+/* LIGHTBOX SCRIPT */
+(function(){
+  const images = Array.from(document.querySelectorAll('.grid .card img'));
+  const backdrop = document.getElementById('lightboxBackdrop');
+  const lightboxImg = document.getElementById('lightboxImage');
+  const prevBtn = document.getElementById('lightboxPrev');
+  const nextBtn = document.getElementById('lightboxNext');
+  const closeBtn = document.getElementById('lightboxClose');
+
+  let currentIndex = -1;
+
+  function setImage(index){
+    if(index < 0 || index >= images.length) return;
+    const img = images[index];
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt || "";
+  }
+
+  function openLightbox(index){
+    if(index < 0 || index >= images.length) return;
+    currentIndex = index;
+    setImage(currentIndex);
+    backdrop.classList.add('active');
+  }
+
+  function closeLightbox(){
+    backdrop.classList.remove('active');
+    currentIndex = -1;
+    setTimeout(() => {
+      if(!backdrop.classList.contains('active')) {
+        lightboxImg.src = "";
+      }
+    }, 220);
+  }
+
+  function showNext(){
+    if(currentIndex === -1) return;
+    const nextIndex = (currentIndex + 1) % images.length;
+    setImage(nextIndex);
+    currentIndex = nextIndex;
+  }
+
+  function showPrev(){
+    if(currentIndex === -1) return;
+    const prevIndex = (currentIndex - 1 + images.length) % images.length;
+    setImage(prevIndex);
+    currentIndex = prevIndex;
+  }
+
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+  });
+
+  nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showNext();
+  });
+
+  prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showPrev();
+  });
+  
+  closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeLightbox();
+  });
+
+  backdrop.addEventListener('click', (e) => {
+    if(e.target === backdrop){
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if(!backdrop.classList.contains('active')) return;
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowRight') showNext();
+    if(e.key === 'ArrowLeft') showPrev();
+  });
+})();
+</script>
+
+</body>
+</html>

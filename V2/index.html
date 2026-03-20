@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atvell Trading Sdn Bhd | Wholesale Souvenirs & Cultural Items</title>
+
+<!-- SEO -->
+<meta name="description" content="Atvell Trading Sdn Bhd is a trusted wholesale supplier of cultural items, souvenirs, temple products, and decorative religious statues since 1968.">
+<meta name="keywords" content="wholesale souvenirs Malaysia, temple souvenirs, cultural items wholesale, god statues, religious souvenirs supplier, gift shop wholesale, Batu Caves souvenir shop">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Atvell Trading Sdn Bhd | Wholesale Souvenirs">
+<meta property="og:description" content="Serving Malaysia since 1968 with wholesale cultural items, souvenirs and religious products.">
+<meta property="og:image" content="assets/images/atvelllogo.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/images/atvelllogo.png">
+<link rel="apple-touch-icon" href="assets/images/atvelllogo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Atvell Trading Sdn Bhd",
+  "url": "https://atvell.com/",
+  "telephone": "+60 11-1888 9942",
+  "description": "Trusted wholesale supplier of cultural items, souvenirs, temple products, and decorative religious statues in Malaysia.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "No. 42, Jalan Medan Batu Caves 1",
+    "addressLocality": "Batu Caves",
+    "postalCode": "68100",
+    "addressRegion": "Selangor",
+    "addressCountry": "MY"
+  }
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+body {
+    margin: 0;
+    padding-top: 120px;
+    background: #f7f4ef;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    height: 90px;
+    background: #ffffff;
+    border-bottom: 1px solid #e8dfd4;
+    position: fixed;
+    top: 0; left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    z-index: 9999;
+    box-sizing: border-box;
+}
+
+/* LOGO + NAME */
+.logo-title a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+}
+
+.logo-title img {
+    height: 55px;
+}
+
+.brand-title {
+    font-size: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+    color: #4a3d29;
+}
+
+/* NAVIGATION (DESKTOP) */
+nav {
+    display: flex;
+    gap: 28px;
+    transform: translateX(-40px);
+}
+
+nav a {
+    color: #4a3d29;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    color: #c9a55a;
+}
+
+/* HAMBURGER (MOBILE ONLY) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 26px;
+    height: 3px;
+    background: #4a3d29;
+}
+
+/* MOBILE MENU */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid #e8dfd4;
+    box-sizing: border-box;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    z-index: 9998;
+}
+
+.mobile-nav a {
+    padding: 12px 0;
+    font-size: 18px;
+    color: #4a3d29;
+    text-decoration: none;
+    border-bottom: 1px solid #f0e8dc;
+}
+
+.mobile-nav a:hover {
+    color: #c9a55a;
+}
+
+/* SLIDESHOW */
+.slideshow-container {
+    width: 100%;
+    height: 580px; /* taller slideshow */
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    background: #f7f4ef;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* fit entire image */
+    display: block;
+    margin: 0 auto;
+    background: #f7f4ef;
+}
+
+/* HERO TEXT */
+.hero-content {
+    padding: 40px;
+    max-width: 900px;
+}
+
+.hero-content h1 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #4a3d29;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #5a5040;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: #4a3d29;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #c9a55a;
+}
+
+/* WHATSAPP */
+.whatsapp-float {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 99999;
+}
+
+.whatsapp-float img {
+    width: 65px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px){
+    body { padding-top: 100px; }
+    nav { display: none; }
+    .hamburger { display: flex; }
+    header { padding: 0 20px; height: 80px; }
+    .mobile-nav { top: 80px; }
+    .logo-title img { height: 42px; }
+    .brand-title { font-size: 17px; }
+    .slideshow-container { height: 380px; }
+    .slide img { height: 380px; }
+    .hero-content h1 { font-size: 32px; }
+    .hero-content p { font-size: 16px; }
+}
+@media(max-width: 640px){
+    body { padding-top: 96px; }
+    header { padding: 0 14px; }
+    .logo-title a { gap: 10px; }
+    .logo-title img { height: 36px; }
+    .brand-title { font-size: 15px; }
+    .mobile-nav { top: 80px; padding: 16px 14px; }
+    .mobile-nav a { font-size: 16px; }
+    .slideshow-container { height: 260px; border-radius: 0; }
+    .slide img { height: 260px; }
+    .hero-content { padding: 24px 14px 32px; }
+    .hero-content h1 { font-size: 28px; margin: 0 0 14px; }
+    .hero-content p { font-size: 15px; }
+    .btn { width: 100%; box-sizing: border-box; text-align: center; }
+    .whatsapp-float { right: 16px; bottom: 16px; }
+    .whatsapp-float img { width: 54px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <!-- LOGO + NAME -->
+    <div class="logo-title">
+        <a href="index.html">
+            <img src="assets/images/atvelllogo.png" alt="Atvell Trading Logo">
+            <span class="brand-title">Atvell Trading Sdn Bhd</span>
+        </a>
+    </div>
+
+    <!-- DESKTOP NAV -->
+    <nav>
+        <a href="index.html" style="color:#c9a55a;">HOME</a>
+        <a href="about/">ABOUT US</a>
+        <a href="products/">PRODUCTS</a>
+        <a href="contact/">CONTACT US</a>
+    </nav>
+
+    <!-- MOBILE HAMBURGER -->
+    <div class="hamburger" onclick="toggleMobileMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</header>
+
+<!-- MOBILE DROPDOWN NAV -->
+<div class="mobile-nav" id="mobileNav">
+    <a href="index.html">HOME</a>
+    <a href="about/">ABOUT US</a>
+    <a href="products/">PRODUCTS</a>
+    <a href="contact/">CONTACT US</a>
+</div>
+
+<!-- SLIDESHOW -->
+<div class="slideshow-container">
+    <div class="slide active"><img src="assets/images/slide1.png" alt="Slide 1"></div>
+    <div class="slide"><img src="assets/images/slide2.png" alt="Slide 2"></div>
+    <div class="slide"><img src="assets/images/slide3.png" alt="Slide 3"></div>
+</div>
+
+<!-- HERO TEXT -->
+<section class="hero-content">
+    <h1>Welcome to Atvell Trading</h1>
+    <p>Supplying trusted wholesale cultural items and souvenirs since 1968.</p>
+    <a class="btn" href="products/">View Our Products</a>
+</section>
+
+<!-- WHATSAPP -->
+<a class="whatsapp-float" href="https://wa.me/601118889942" target="_blank" rel="noopener">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Chat">
+</a>
+
+<!-- JS -->
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById("mobileNav");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+
+// Slideshow
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+}, 3500);
+</script>
+
+</body>
+</html>
