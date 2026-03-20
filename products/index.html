@@ -15,6 +15,20 @@
 
 <link rel="icon" type="image/png" href="../assets/images/atvelllogo.png">
 <link rel="apple-touch-icon" href="../assets/images/atvelllogo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Atvell Trading Products",
+  "url": "https://atvell.com/products/",
+  "description": "Sample product gallery featuring wholesale souvenirs, cultural products, religious items, and temple gifts from Atvell Trading Sdn Bhd.",
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Atvell Trading sample product gallery",
+    "numberOfItems": 24
+  }
+}
+</script>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -29,7 +43,7 @@ nav a {text-decoration:none;white-space:nowrap;color:#4a3d29;font-weight:500;}
 nav a:hover {color:#c9a55a;}
 .hamburger {display:none;flex-direction:column;gap:5px;cursor:pointer;}
 .hamburger div {width:26px;height:3px;background:#4a3d29;}
-.mobile-nav {display:none;flex-direction:column;width:100%;background:white;padding:20px;border-bottom:1px solid #e8dfd4;}
+.mobile-nav {display:none;flex-direction:column;width:100%;background:white;padding:20px;border-bottom:1px solid #e8dfd4;box-sizing:border-box;position:fixed;top:90px;left:0;z-index:9998;}
 .mobile-nav a {padding:12px 0;border-bottom:1px solid #f0e8dc;font-size:18px;font-weight:500;color:#4a3d29;text-decoration:none;}
 .mobile-nav a:hover {color:#c9a55a;}
 .section {padding:40px;max-width:1100px;margin:auto;}
@@ -41,17 +55,19 @@ h1 {font-size:45px;margin-bottom:20px;color:#4a3d29;}
 .card img {width:100%;height:190px;object-fit:cover;border-radius:12px;cursor:pointer;}
 .whatsapp-float {position:fixed;right:24px;bottom:24px;z-index:99999;}
 .whatsapp-float img {width:65px;}
-@media(max-width:900px){nav{display:none;}.hamburger{display:flex;}header{height:80px;padding:0 20px;}.brand-title{font-size:16px;}h1{font-size:32px;}}
+@media(max-width:900px){body{padding-top:100px;}nav{display:none;}.hamburger{display:flex;}header{height:80px;padding:0 20px;}.mobile-nav{top:80px;}.logo-title img{height:42px;}.brand-title{font-size:16px;}h1{font-size:32px;}}
 
 /* LIGHTBOX */
 .lightbox-backdrop{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.85);
+  background:rgba(24,18,12,0.92);
   display:flex;
   align-items:center;
   justify-content:center;
-  z-index:9998;
+  padding:32px 88px;
+  box-sizing:border-box;
+  z-index:100000;
 
   opacity:0;
   pointer-events:none;
@@ -64,8 +80,13 @@ h1 {font-size:45px;margin-bottom:20px;color:#4a3d29;}
 
 .lightbox-inner{
   position:relative;
-  max-width:90vw;
-  max-height:90vh;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   transform:scale(0.9) translateY(10px);
   opacity:0;
   transition:transform 220ms ease-out, opacity 220ms ease-out;
@@ -79,10 +100,9 @@ h1 {font-size:45px;margin-bottom:20px;color:#4a3d29;}
   display:block;
   max-width:100%;
   max-height:100%;
-  border-radius:14px;
-  box-shadow:0 18px 40px rgba(0,0,0,0.55);
-  object-fit:contain; /* show full image */
-  background:#111;
+  object-fit:contain;
+  border-radius:10px;
+  box-shadow:0 18px 48px rgba(0,0,0,0.35);
 }
 
 .lightbox-arrow{
@@ -109,14 +129,58 @@ h1 {font-size:45px;margin-bottom:20px;color:#4a3d29;}
   transform:translateY(-50%) scale(1.06);
 }
 
-.lightbox-close-hint{
-  position:fixed;
-  bottom:22px;
-  left:50%;
-  transform:translateX(-50%);
-  color:#e5e7eb;
-  font-size:12px;
-  opacity:0.9;
+.lightbox-close{
+  position:absolute;
+  top:20px;
+  right:20px;
+  color:#ffffff;
+  font-size:28px;
+  background:rgba(255,255,255,0.14);
+  width:48px;
+  height:48px;
+  border:0;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.lightbox-close:hover{
+  background:rgba(255,255,255,0.24);
+}
+
+@media(max-width:640px){
+  body{padding-top:96px;}
+  header{padding:0 14px;}
+  .logo-title a{gap:10px;}
+  .logo-title img{height:36px;}
+  .brand-title{font-size:15px;}
+  .mobile-nav{top:80px;padding:16px 14px;}
+  .mobile-nav a{font-size:16px;}
+  .section{padding:24px 14px 40px;}
+  .note{font-size:15px;margin-bottom:18px;}
+  .grid{gap:16px;}
+  .lightbox-backdrop{
+    padding:20px 10px;
+  }
+  .lightbox-image{
+    max-width:calc(100vw - 24px);
+    max-height:calc(100vh - 120px);
+  }
+  .lightbox-close,
+  .lightbox-arrow{
+    width:42px;
+    height:42px;
+    font-size:24px;
+  }
+  .lightbox-arrow-left{left:10px;}
+  .lightbox-arrow-right{right:10px;}
+  .lightbox-close{
+    top:10px;
+    right:10px;
+  }
+  .whatsapp-float{right:16px;bottom:16px;}
+  .whatsapp-float img{width:54px;}
 }
 </style>
 </head>
@@ -150,7 +214,7 @@ h1 {font-size:45px;margin-bottom:20px;color:#4a3d29;}
 
 <section class="section">
 <h1>Our Products</h1>
-<div class="note">These are just samples. For more products, please visit us or contact us.</div>
+<div class="note">The products displayed here are sample selections from our range. For more information on additional items and retail or wholesale orders, please contact us.</div>
 
 <div class="grid">
     <div class="card"><img src="../assets/images/product1.webp" alt="product1 sample" loading="lazy" decoding="async" width="400" height="190"></div>
@@ -187,18 +251,18 @@ h1 {font-size:45px;margin-bottom:20px;color:#4a3d29;}
 </div>
 </section>
 
-<a class="whatsapp-float" href="https://wa.me/601118889942" target="_blank">
+<a class="whatsapp-float" href="https://wa.me/601118889942" target="_blank" rel="noopener">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Chat">
 </a>
 
 <!-- LIGHTBOX MARKUP -->
 <div class="lightbox-backdrop" id="lightboxBackdrop">
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image viewer">&times;</button>
   <div class="lightbox-inner">
     <img id="lightboxImage" class="lightbox-image" src="" alt="">
   </div>
   <div class="lightbox-arrow lightbox-arrow-left" id="lightboxPrev">&#10094;</div>
   <div class="lightbox-arrow lightbox-arrow-right" id="lightboxNext">&#10095;</div>
-  <div class="lightbox-close-hint">Click outside or press Esc to close</div>
 </div>
 
 <script>
@@ -214,6 +278,7 @@ function toggleMobileMenu() {
   const lightboxImg = document.getElementById('lightboxImage');
   const prevBtn = document.getElementById('lightboxPrev');
   const nextBtn = document.getElementById('lightboxNext');
+  const closeBtn = document.getElementById('lightboxClose');
 
   let currentIndex = -1;
 
@@ -268,8 +333,12 @@ function toggleMobileMenu() {
     e.stopPropagation();
     showPrev();
   });
+  
+  closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeLightbox();
+  });
 
-  // close when clicking outside the image
   backdrop.addEventListener('click', (e) => {
     if(e.target === backdrop){
       closeLightbox();

@@ -15,9 +15,26 @@
 <meta property="og:description" content="Serving Malaysia since 1968 with wholesale cultural items, souvenirs and religious products.">
 <meta property="og:image" content="assets/images/atvelllogo.png">
 <meta property="og:type" content="website">
-
 <link rel="icon" type="image/png" href="assets/images/atvelllogo.png">
 <link rel="apple-touch-icon" href="assets/images/atvelllogo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Atvell Trading Sdn Bhd",
+  "url": "https://atvell.com/",
+  "telephone": "+60 11-1888 9942",
+  "description": "Trusted wholesale supplier of cultural items, souvenirs, temple products, and decorative religious statues in Malaysia.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "No. 42, Jalan Medan Batu Caves 1",
+    "addressLocality": "Batu Caves",
+    "postalCode": "68100",
+    "addressRegion": "Selangor",
+    "addressCountry": "MY"
+  }
+}
+</script>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -107,6 +124,11 @@ nav a:hover {
     width: 100%;
     padding: 20px;
     border-bottom: 1px solid #e8dfd4;
+    box-sizing: border-box;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    z-index: 9998;
 }
 
 .mobile-nav a {
@@ -198,13 +220,34 @@ nav a:hover {
 
 /* RESPONSIVE */
 @media(max-width: 900px){
+    body { padding-top: 100px; }
     nav { display: none; }
     .hamburger { display: flex; }
     header { padding: 0 20px; height: 80px; }
+    .mobile-nav { top: 80px; }
+    .logo-title img { height: 42px; }
+    .brand-title { font-size: 17px; }
     .slideshow-container { height: 380px; }
     .slide img { height: 380px; }
     .hero-content h1 { font-size: 32px; }
     .hero-content p { font-size: 16px; }
+}
+@media(max-width: 640px){
+    body { padding-top: 96px; }
+    header { padding: 0 14px; }
+    .logo-title a { gap: 10px; }
+    .logo-title img { height: 36px; }
+    .brand-title { font-size: 15px; }
+    .mobile-nav { top: 80px; padding: 16px 14px; }
+    .mobile-nav a { font-size: 16px; }
+    .slideshow-container { height: 260px; border-radius: 0; }
+    .slide img { height: 260px; }
+    .hero-content { padding: 24px 14px 32px; }
+    .hero-content h1 { font-size: 28px; margin: 0 0 14px; }
+    .hero-content p { font-size: 15px; }
+    .btn { width: 100%; box-sizing: border-box; text-align: center; }
+    .whatsapp-float { right: 16px; bottom: 16px; }
+    .whatsapp-float img { width: 54px; }
 }
 </style>
 </head>
@@ -259,7 +302,7 @@ nav a:hover {
 </section>
 
 <!-- WHATSAPP -->
-<a class="whatsapp-float" href="https://wa.me/01118889942" target="_blank">
+<a class="whatsapp-float" href="https://wa.me/601118889942" target="_blank" rel="noopener">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Chat">
 </a>
 
